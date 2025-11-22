@@ -3,32 +3,142 @@
 <head>
   <meta charset="UTF-8">
   <title>project-hub.me</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      padding: 1.5rem;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #111827;
+      color: #e5e7eb;
+    }
+    main {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    h1 {
+      margin-top: 0;
+      color: #60a5fa;
+      font-size: 1.8rem;
+    }
+    h2 {
+      margin-top: 1.5rem;
+      font-size: 1.1rem;
+      color: #bfdbfe;
+    }
+    p {
+      line-height: 1.5;
+      font-size: 0.95rem;
+    }
+    ul {
+      padding-left: 1.2rem;
+      font-size: 0.95rem;
+    }
+    code {
+      background: #020617;
+      border-radius: 3px;
+      padding: 0 0.25rem;
+      font-size: 0.9rem;
+    }
+    .meta {
+      font-size: 0.93rem;
+      margin-bottom: 0.4rem;
+    }
+    .label {
+      font-weight: 600;
+      color: #9ca3af;
+      margin-right: 0.35rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-size: 0.75rem;
+    }
+    details {
+      margin-top: 0.6rem;
+      padding: 0.6rem 0.75rem;
+      border-radius: 6px;
+      border: 1px solid #374151;
+      background: #020617;
+      font-size: 0.93rem;
+    }
+    summary {
+      cursor: pointer;
+      font-weight: 500;
+      color: #e5e7eb;
+    }
+    details p {
+      margin-top: 0.5rem;
+      margin-bottom: 0.4rem;
+      color: #d1d5db;
+    }
+    footer {
+      margin-top: 1.5rem;
+      padding-top: 0.8rem;
+      border-top: 1px solid #1f2937;
+      font-size: 0.85rem;
+      color: #9ca3af;
+    }
+  </style>
 </head>
 <body>
-  <h1>Domain Registration & Hosting Assignment</h1>
+  <main>
+    <h1>Domain registration & web hosting assignment</h1>
 
-  <p><strong>Domain:</strong> project-hub.me</p>
-  <p><strong>Hosting provider:</strong> GitHub Pages (GitHub Student Developer Pack)</p>
-  <p><strong>SSL:</strong> Enabled via GitHub Pages (Let's Encrypt)</p>
+    <p>This page is deployed as part of the TalTech “Domain registration and web-hosting” assignment.</p>
 
-  <h2>DNS Records Used</h2>
-  <ul>
-    <li>A Records → GitHub Pages IP addresses</li>
-    <li>CNAME → www.project-hub.me → &lt;yourusername&gt;.github.io</li>
-    <li>TXT Record → TalTech UNI-ID: 252533IVSB</li>
-  </ul>
+    <div class="meta">
+      <span class="label">Domain</span>
+      <span>project-hub.me</span>
+    </div>
+    <div class="meta">
+      <span class="label">Hosting</span>
+      <span>GitHub Pages (GitHub Student Developer Pack)</span>
+    </div>
+    <div class="meta">
+      <span class="label">SSL / HTTPS</span>
+      <span>Enabled via GitHub Pages (Let's Encrypt)</span>
+    </div>
+    <div class="meta">
+      <span class="label">TXT (Uni-ID)</span>
+      <span>252533IVSB</span>
+    </div>
 
-  <h2>Summary</h2>
-  <p>
-    I registered my domain using Namecheap via the GitHub Student Pack and configured A, CNAME, 
-    and TXT DNS records. The domain points to GitHub Pages, where this site is hosted. 
-    HTTPS is enabled through GitHub's automatic SSL integration. This page is publicly accessible 
-    and demonstrates the required domain + hosting + SSL setup.
-  </p>
+    <h2>Summary</h2>
+    <p>
+      The domain <code>project-hub.me</code> was registered via Namecheap using the GitHub Student
+      Developer Pack. DNS records (A, CNAME and TXT) were configured to point the domain to a GitHub Pages
+      repository, which serves this page over HTTPS using an automatically managed SSL certificate.
+    </p>
 
-  <p style="font-size: 0.85em; color: gray;">
-    TalTech — Domain & Web Hosting Assignment
-  </p>
+    <h2>DNS records used</h2>
+    <ul>
+      <li>
+        <strong>A records</strong> – four records for <code>@</code> pointing to the official GitHub Pages
+        IPv4 addresses: <code>185.199.108.153</code>, <code>185.199.109.153</code>,
+        <code>185.199.110.153</code>, <code>185.199.111.153</code>.
+      </li>
+      <li>
+        <strong>CNAME</strong> – <code>www.project-hub.me</code> → 
+        <code>error-bufferoverflow.github.io</code>.
+      </li>
+      <li>
+        <strong>TXT</strong> – <code>@</code> contains the TalTech Uni-ID <code>252533IVSB</code> for grading.
+      </li>
+    </ul>
+
+    <details>
+      <summary>Short explanations of DNS record types</summary>
+      <p><strong>A record</strong> – maps a domain name to an IPv4 address.</p>
+      <p><strong>AAAA record</strong> – maps a domain name to an IPv6 address (not used in this setup).</p>
+      <p><strong>CNAME</strong> – makes one name an alias of another. Here it is used so 
+         <code>www.project-hub.me</code> points to the GitHub Pages host.</p>
+      <p><strong>MX record</strong> – specifies mail servers for the domain. Not configured for this assignment.</p>
+      <p><strong>TXT record</strong> – stores arbitrary text in DNS. Commonly used for verification; here it stores the Uni-ID.</p>
+      <p><strong>NS record</strong> – points to the authoritative name servers that hold the DNS zone for the domain.</p>
+    </details>
+
+    <footer>
+      TalTech · Domain registration & web hosting assignment · project-hub.me
+    </footer>
+  </main>
 </body>
 </html>
-
